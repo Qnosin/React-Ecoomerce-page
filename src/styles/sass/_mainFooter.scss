@@ -1,0 +1,57 @@
+@use './Variables' as *;
+
+.Main__Footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $BACKGROUND;
+    text-align: center;
+    padding: 2rem;
+    @media screen  and (min-width:800px) {
+        flex-direction: row;
+        height: 1vh;
+    }
+    img{
+        margin-bottom: 1rem;
+        max-width: 120px;
+        @media screen  and (min-width:800px) {
+            margin-bottom: 0px;
+            padding: .5rem;
+        }
+    }
+    .american{
+        max-width: 80px;
+        margin-bottom: 0px;
+        @media screen  and (min-width:800px) {
+            width: fit-content;
+            height: fit-content;
+            max-width: 50px;
+        }
+    }
+    .paypal{
+        max-width: 180px;
+        margin-bottom: 0px;
+        @media screen  and (min-width:800px) {
+            width: fit-content;
+            height: fit-content;
+            max-width: 120px;
+        }
+    }
+    .mastercard{
+        max-width: 100px;
+        @media screen  and (min-width:800px) {
+            width: fit-content;
+            height: fit-content;
+            max-width: 50px;
+        }
+    }
+    .visa{
+        @media screen  and (min-width:800px) {
+            width: fit-content;
+            height: fit-content;
+            max-width: 80px;
+        }
+
+    }
+}

@@ -1,0 +1,50 @@
+@use './Variables' as *;
+.register__block{
+    min-height: calc(100vh - 7vh - 103px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width:800px) {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .register{
+        min-height: 50vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        -webkit-box-shadow: 1px -1px 22px -18px rgba(66, 68, 90, 1);
+        -moz-box-shadow: 1px -1px 22px -18px rgba(66, 68, 90, 1);
+        box-shadow: 1px -1px 22px -18px rgba(66, 68, 90, 1);
+        input{
+            min-height: 5vh;
+            font-size: 1rem;
+            outline: 1px black;
+            margin-bottom: 2rem;
+        }
+        button{
+            padding: 1rem;
+            width: 120px;
+            text-transform: capitalize;
+            background-color: $BACKGROUND;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+    }
+    .registration__succes__info{
+        min-height: 10vh;
+        color: green;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .registraion__fail__info{
+        min-height: 10vh;
+        color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

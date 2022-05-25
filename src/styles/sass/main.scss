@@ -1,0 +1,25 @@
+//reset
+@use './reset';
+
+//variables
+@use './Variables';
+
+//Media Querries
+@use './mediaQuerries';
+
+//header
+@use './header';
+
+//hamburger
+@use './hamburger';
+
+//MainPage
+@use './mainPage';
+
+//Main Footter
+@use './mainFooter';
+
+//RegisterSite
+@use './register';
+
+

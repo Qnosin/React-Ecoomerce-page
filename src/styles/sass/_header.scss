@@ -1,0 +1,95 @@
+@use './Variables' as *;
+
+.header{
+    width: 100%;
+    min-height: 10vh;
+    .header__upper__info{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 14vh;
+        background-color: $BACKGROUND;
+        color: $PRIMARY-TEXT;
+        font-family: 'Poppins', sans-serif;
+        @media screen and (min-width:800px) {
+            flex-direction: row;
+            justify-content: space-evenly;
+            min-height: 7vh;
+        }
+        .header__details{
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            @media screen and (min-width:800px) {
+                margin-bottom: 0px;
+            }
+           
+        }
+        .header__socialmedia{
+            svg{
+                padding: .5rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+    .header__lower__info{
+        @media screen and (max-width:800px) {
+            display: none;
+        }
+        nav{
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            .header__logo{
+                img{
+                    max-width: 100px;
+                }
+            }
+            .header__lower__menu{
+                position: relative;
+                a{
+                    padding: .6rem;
+                    text-transform: uppercase;
+                    color: $SECONDARY-TEXT;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+            .header__lower__input{
+                width: 45%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                input{
+                    min-height: 5vh;
+                    width: 70%;
+                    outline: 1px solid black;
+                }
+                button{
+                    min-height: 6vh;
+                    background-color: $SECONDARY-TEXT;
+                    color: white;
+                    padding: .5rem;
+                    width: 100px;
+                    text-transform: uppercase;
+                    border: none;
+                }
+            }
+            .header__basket__number{
+                position: absolute;
+                top: -.6rem;
+                right: -1rem;
+                border: 1px solid red;
+                border-radius: 10px;
+                padding-left: .4rem;
+                padding-right: .4rem;
+            }
+        }
+       
+    }
+    
+}
