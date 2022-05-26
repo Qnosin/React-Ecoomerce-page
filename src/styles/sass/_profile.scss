@@ -1,0 +1,25 @@
+.Profile__container{
+    min-height: calc(100vh - 43px - 103px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'poppins',sans-serif;
+    @media screen and (min-width:800px) {
+        min-height: calc(100vh - 43px - 103px - 100px);
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    img{
+        width: 200px;
+    }
+    p{
+        font-size: 1rem;
+        margin-top: 2rem;
+    }
+    .information{
+        text-align: center;
+    }
+}

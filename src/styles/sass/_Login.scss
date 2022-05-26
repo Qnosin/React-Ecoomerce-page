@@ -1,0 +1,63 @@
+@use './Variables' as *;
+
+.Login__Container{
+    min-height: calc(100vh - 103px - 43px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .Login__Section{
+        width: 100%;
+        min-height: 50vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        -webkit-box-shadow: 1px -1px 22px -18px rgba(66, 68, 90, 1);
+        -moz-box-shadow: 1px -1px 22px -18px rgba(66, 68, 90, 1);
+        box-shadow: 1px -1px 22px -18px rgba(66, 68, 90, 1);
+        @media screen and (min-width:800px) {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .Login__with__Email{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            min-height: 16vh;
+            .LoginSuccesfull{
+                text-align: center;
+                color: rgb(8, 248, 8);
+                font-size: 1.3rem;
+            }
+            input{
+                min-height: 5vh;
+                font-size: 1rem;
+                outline: 1px black;
+                margin-bottom: 2rem;
+            }
+        }
+        .Login__with__Google{
+            min-height: 5vh;
+            width: 300px;
+            display: flex;
+            justify-content: space-evenly;
+            button{
+                padding: 1rem;
+                cursor: pointer;
+            }
+            img{
+                width: 200px;
+                cursor: pointer;
+            }
+            .Email__Button{
+                padding: 1rem;
+                width: 70px;
+                text-transform: capitalize;
+                background-color: $BACKGROUND;
+                cursor: pointer;
+                border: 1px solid black;
+            }
+        }
+    }
+
+}

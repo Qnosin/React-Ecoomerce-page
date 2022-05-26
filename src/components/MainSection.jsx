@@ -3,14 +3,12 @@ import {Suspense} from 'react';
 import {AiFillPhone} from 'react-icons/ai';
 import {IoIosPin} from 'react-icons/io';
 import {FaFax} from 'react-icons/fa';
-function MainSection() {
-    const Product = React.lazy(() => import('./ProductsElement'));
+import ProductsElement from './ProductsElement';
+function MainSection({sendRequest, setSendRequest}) {
   
   return (
     <main className='mainPage'>
-        <Suspense fallback={<div>Loading</div>}>
-            <Product></Product>
-        </Suspense>
+            <ProductsElement sendRequest={sendRequest} setSendRequest={setSendRequest}></ProductsElement>
         <article className='MainPage__Banner'>
             <div className='Banner__description'>
                 <h2>do you Need More Tips?</h2>

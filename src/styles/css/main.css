@@ -101,6 +101,9 @@ table {
 }
 .header .header__lower__info nav .header__lower__menu {
   position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .header .header__lower__info nav .header__lower__menu a {
   padding: 0.6rem;
@@ -108,6 +111,27 @@ table {
   color: #000001;
   text-decoration: none;
   font-weight: bold;
+  position: relative;
+  font-family: "poppins";
+}
+.header .header__lower__info nav .header__lower__menu a::after {
+  content: "";
+  position: absolute;
+  background-color: #1e2196;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s;
+}
+.header .header__lower__info nav .header__lower__menu a:hover::after {
+  width: 100%;
+}
+.header .header__lower__info nav .header__lower__menu .SignOutButton {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
 }
 .header .header__lower__info nav .header__lower__input {
   width: 45%;
@@ -164,7 +188,7 @@ table {
   flex-direction: column;
   font-size: 1.5rem;
   background-color: #f1ea83;
-  min-height: 15vh;
+  min-height: 40vh;
 }
 .Hamburger__menu nav a {
   color: #1e2196;
@@ -189,6 +213,25 @@ table {
   margin-top: 5rem;
   margin-bottom: 2rem;
   cursor: pointer;
+}
+.mainPage .product .load {
+  width: 100px;
+  height: 100px;
+  margin: 110px auto 0;
+  border: solid 10px #1e2196;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-transition: all 0.5s ease-in;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  transition: all 0.5s ease-in;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .mainPage .product img {
   max-width: 50%;
@@ -317,6 +360,22 @@ table {
   font-weight: bold;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
 .Main__Footer {
   display: flex;
   justify-content: center;
@@ -432,4 +491,95 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.Login__Container {
+  min-height: calc(100vh - 103px - 43px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Login__Container .Login__Section {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  -webkit-box-shadow: 1px -1px 22px -18px rgb(66, 68, 90);
+  -moz-box-shadow: 1px -1px 22px -18px rgb(66, 68, 90);
+  box-shadow: 1px -1px 22px -18px rgb(66, 68, 90);
+}
+@media screen and (min-width: 800px) {
+  .Login__Container .Login__Section {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+.Login__Container .Login__Section .Login__with__Email {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 16vh;
+}
+.Login__Container .Login__Section .Login__with__Email .LoginSuccesfull {
+  text-align: center;
+  color: rgb(8, 248, 8);
+  font-size: 1.3rem;
+}
+.Login__Container .Login__Section .Login__with__Email input {
+  min-height: 5vh;
+  font-size: 1rem;
+  outline: 1px black;
+  margin-bottom: 2rem;
+}
+.Login__Container .Login__Section .Login__with__Google {
+  min-height: 5vh;
+  width: 300px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.Login__Container .Login__Section .Login__with__Google button {
+  padding: 1rem;
+  cursor: pointer;
+}
+.Login__Container .Login__Section .Login__with__Google img {
+  width: 200px;
+  cursor: pointer;
+}
+.Login__Container .Login__Section .Login__with__Google .Email__Button {
+  padding: 1rem;
+  width: 70px;
+  text-transform: capitalize;
+  background-color: #f1ea83;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.Profile__container {
+  min-height: calc(100vh - 43px - 103px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "poppins", sans-serif;
+}
+@media screen and (min-width: 800px) {
+  .Profile__container {
+    min-height: calc(100vh - 43px - 103px - 100px);
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+.Profile__container img {
+  width: 200px;
+}
+.Profile__container p {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+.Profile__container .information {
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */

@@ -2,13 +2,32 @@ import React from 'react'
 import {FiFacebook} from 'react-icons/fi';
 import {AiOutlineInstagram , AiOutlineLinkedin , AiOutlineYoutube} from 'react-icons/ai'
 import {RiPinterestLine} from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { UserContext } from '../Contexts/UserContext';
+import { Link, Navigate } from 'react-router-dom';
 import {BsBasket} from 'react-icons/bs';
 import Logo from '../image/shoes-store-logo.png';
 import {useContext} from 'react';
 import {basketContext} from '../Contexts/shopContext';
-function Header() {
+import {signOut , onAuthStateChanged} from 'firebase/auth';
+import {auth} from '../firebase-config';
+import {useNavigate} from 'react-router-dom';
+
+function Header({setSendRequest}) {
   const {basketNumber} = useContext(basketContext);
+  const {user} = useContext(UserContext);
+  const {setUser} = useContext(UserContext);
+  let navigate = useNavigate();
+  onAuthStateChanged(auth,(currentUser) =>{
+      setUser(currentUser)
+  })
+
+  const LogOut = async () =>{
+      await signOut(auth);
+      localStorage.removeItem('name');
+      localStorage.removeItem('image');
+      localStorage.removeItem('id');
+      window.location.reload();
+  }
   return (
     <header className='header'>
         <article className="header__upper__info">
@@ -40,8 +59,8 @@ function Header() {
               <button>Search</button>
             </div>
             <div className='header__lower__menu'>
-            <Link to={'/Register'}>Register</Link>
-            <Link to={'/login'}>Login</Link>
+            {localStorage.getItem('name') === null ? <Link to={'/Register'}>Register</Link> : <Link to={`/profile/${localStorage.getItem('name')}`}>{localStorage.getItem('name')}</Link> }
+            {localStorage.getItem('name') === null ?  <Link to={'/login'}>Login</Link> : <div onClick={LogOut} className='SignOutButton'>Log Out</div> }
             <Link to={'/basket/:id'}><BsBasket /></Link>
             <div className='header__basket__number'>{basketNumber}</div>
             </div>
