@@ -3,11 +3,32 @@
 .mainPage{
     font-family: 'Poppins', sans-serif;
     min-height: 50vh;
+    margin: 0 auto;
+    .Products{
+        @media screen  and (min-width:800px) {
+            margin: 0 auto;
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        @media screen and (min-width:1200px) {
+            display: block;
+            
+        }
+    }
     .product{
         text-align: center;
         font-size: 1.2rem;
         margin-top: 5rem;
         margin-bottom: 2rem;
+        @media screen  and (min-width:800px) {
+            max-width: 300px;
+            display: inline-block;
+
+        }
         cursor: pointer;
         .load {
             width: 100px;

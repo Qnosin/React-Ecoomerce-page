@@ -20,16 +20,19 @@ function App() {
   //login state
   const [loginEmail,setLoginEmail] = useState("");
   const [loginPassword,setLoginPassword] = useState("");
-  //basket state
+  //basket Number state
   const [basketNumber,setBasketNumber] = useState(0);
+  //basket Items
+  const [basketItems,setBasketItems] = useState([]);
+  const [quantity,setQuantity] = useState(0);
+
 
   //user state
   const [user,setUser] = useState({});
   return (
     <div className="App">
       <Router>
-
-      <basketContext.Provider value={{basketNumber,setBasketNumber}}>
+      <basketContext.Provider value={{basketNumber,setBasketNumber,basketItems,setBasketItems,quantity,setQuantity}}>
         <RegisterContext.Provider value={{registerEmail,setRegisterEmail,registerPassword,setRegisterPassword}}>
           <LoginContext.Provider value={{loginEmail,setLoginEmail,loginPassword,setLoginPassword}}>
             <UserContext.Provider value={{user,setUser}}>
@@ -37,8 +40,8 @@ function App() {
           <Route path='/' element={<Homepage isOpen={isOpen} setOpen={setOpen}></Homepage>}/>
           <Route path='/login' element={<Login isOpen={isOpen} setOpen={setOpen} ></Login>}/>
           <Route path='/register' element={<Register isOpen={isOpen} setOpen={setOpen}></Register>}/>
-          <Route path='/basket/:id' element={<Basket/>}/>
-          <Route path='/Product/:id' element={<Product/>}/>
+          <Route path='/basket' element={<Basket isOpen={isOpen} setOpen={setOpen}/>}/>
+          <Route path='/Product/:id' element={<Product isOpen={isOpen} setOpen={setOpen}/>}/>
           <Route path='/profile/:name' element={<Profile isOpen={isOpen} setOpen={setOpen} />}></Route>  
         </Routes>
         </UserContext.Provider>

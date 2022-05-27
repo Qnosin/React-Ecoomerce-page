@@ -1,0 +1,97 @@
+@use './Variables' as *;
+.Product__container{
+    min-height: calc(100vh - 119px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    @media screen and (min-width:800px) {
+        min-height: calc(100vh - 103px - 59.5px );
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    img{
+        max-width: 200px;
+    }
+    .Product__info{
+        font-family: 'poppins',sans-serif;
+        text-align: center;
+        @media screen and (min-width:800px) {
+            display: flex;
+        }
+        h2{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p{
+            margin-bottom: 2rem;
+        }
+        img{
+            max-width: 300px;
+        }
+        button{
+            padding: 1rem;
+            width: 120px;
+            text-transform: capitalize;
+            background-color: $BACKGROUND;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+        .product__info__detail{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .quantity{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 1.2rem;
+                label{
+                    margin-bottom: 1rem;
+                }
+                select{
+                    text-align: center;
+                    max-width: 150px;
+                    margin: 0 auto;
+                    padding: .4rem;
+                    option{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .Product__Presentation__Option{
+        font-size: 1.3rem;
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        .first__block{
+            text-align: center;
+        }
+        .Second__block{
+            text-align: center;
+        }
+    }
+}
+.load {
+    width: 100px;
+    height: 100px;
+    margin: 110px auto 0;
+    border:solid 10px $PRIMARY-TEXT;
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    display: inline-block;
+     -webkit-transition: all 0.5s ease-in;
+    -webkit-animation-name:             rotate; 
+    -webkit-animation-duration:         1.0s; 
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+        
+         transition: all 0.5s ease-in;
+    animation-name:             rotate; 
+    animation-duration:         1.0s; 
+    animation-iteration-count:  infinite;
+    animation-timing-function: linear; 
+}

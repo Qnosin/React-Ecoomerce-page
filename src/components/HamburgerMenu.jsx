@@ -19,6 +19,7 @@ function HamburgerMenu() {
       <nav>
       {localStorage.getItem('name') === null ? <Link to={'/login'}>Login</Link> : <Link to={`/profile/${localStorage.getItem('name')}`}>{localStorage.getItem('name')}</Link> }
       {localStorage.getItem('name') === null ? <Link to={'/Register'}>Register</Link> : <div onClick={LogOut} className='SignOutButton'>Log Out</div> }
+      <Link to={'/'}>Home</Link>
       <Link to='/basket/:id'><BsBasket /></Link>
       </nav>
     </article>

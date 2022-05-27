@@ -9,12 +9,11 @@ import {UserContext} from '../Contexts/UserContext';
 import {auth} from '../firebase-config';
 function Homepage({isOpen,setOpen}) {
   const {setUser} = useContext(UserContext);
-  const [sendRequest,setSendRequest] = useState(false);
   return (
     <>
     <Hamburger toggled={isOpen} toggle={setOpen} />
-    <Header setSendRequest={setSendRequest} ></Header>
-    <MainSection sendRequest={sendRequest} setSendRequest={setSendRequest} ></MainSection>
+    <Header></Header>
+    <MainSection ></MainSection>
     {isOpen && <HamburgerMenu />}
     <MainFooter></MainFooter>
     </>

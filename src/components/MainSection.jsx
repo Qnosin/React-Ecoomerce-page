@@ -8,7 +8,9 @@ function MainSection({sendRequest, setSendRequest}) {
   
   return (
     <main className='mainPage'>
-            <ProductsElement sendRequest={sendRequest} setSendRequest={setSendRequest}></ProductsElement>
+            <article className='Products'>
+                <ProductsElement sendRequest={sendRequest} setSendRequest={setSendRequest}></ProductsElement>
+            </article>
         <article className='MainPage__Banner'>
             <div className='Banner__description'>
                 <h2>do you Need More Tips?</h2>

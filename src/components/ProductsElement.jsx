@@ -15,6 +15,9 @@ function ProductsElement({}) {
             setProducts(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
         };
         getProducts();
+        setTimeout(()=>{
+            setIsLoading(false);
+        },1000)
     },[])
 
    const handleItem = (e,id) =>{
@@ -22,19 +25,21 @@ function ProductsElement({}) {
    }
     return (
         <>
-          {products.map((product) => {
-              return(
-                  <>
-                  <article onClick={(e) =>handleItem(e,product.id)} key={product.id} className="product">
-                      <img onLoad={()=>setIsLoading(false)} src={product.image}></img>
-                      {isLoading && <div className="load"></div>}
-                      <h2 className='product__name'>{product.name}</h2>
-                      <p className='product__review'><AiFillStar />{product.reviews} reviews</p>
-                      <p className='product__price'>${product.price}</p>
-                  </article>
-                  </>
-              )
-          })}
+        {isLoading === true
+         ?
+        <div className='load'></div>
+         :
+         products.map((product) => {
+            return(
+              <article onClick={(e) =>handleItem(e,product.id)} key={product.id} className="product">
+                  <img src={product.image}></img>
+                  <h2 className='product__name'>{product.name}</h2>
+                  <p className='product__review'><AiFillStar />{product.reviews} reviews</p>
+                  <p className='product__price'>${product.price}</p>
+              </article> 
+            )
+        })} 
+          
         </>
     )
 

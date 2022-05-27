@@ -26,7 +26,6 @@ function Header({setSendRequest}) {
       localStorage.removeItem('name');
       localStorage.removeItem('image');
       localStorage.removeItem('id');
-      window.location.reload();
   }
   return (
     <header className='header'>
@@ -61,7 +60,7 @@ function Header({setSendRequest}) {
             <div className='header__lower__menu'>
             {localStorage.getItem('name') === null ? <Link to={'/Register'}>Register</Link> : <Link to={`/profile/${localStorage.getItem('name')}`}>{localStorage.getItem('name')}</Link> }
             {localStorage.getItem('name') === null ?  <Link to={'/login'}>Login</Link> : <div onClick={LogOut} className='SignOutButton'>Log Out</div> }
-            <Link to={'/basket/:id'}><BsBasket /></Link>
+            <Link to={'/basket'}><BsBasket /></Link>
             <div className='header__basket__number'>{basketNumber}</div>
             </div>
             </nav>

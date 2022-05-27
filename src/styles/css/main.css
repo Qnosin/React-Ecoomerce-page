@@ -206,6 +206,23 @@ table {
 .mainPage {
   font-family: "Poppins", sans-serif;
   min-height: 50vh;
+  margin: 0 auto;
+}
+@media screen and (min-width: 800px) {
+  .mainPage .Products {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainPage .Products {
+    display: block;
+  }
 }
 .mainPage .product {
   text-align: center;
@@ -213,6 +230,12 @@ table {
   margin-top: 5rem;
   margin-bottom: 2rem;
   cursor: pointer;
+}
+@media screen and (min-width: 800px) {
+  .mainPage .product {
+    max-width: 300px;
+    display: inline-block;
+  }
 }
 .mainPage .product .load {
   width: 100px;
@@ -582,4 +605,105 @@ table {
 }
 .Profile__container .information {
   text-align: center;
+}
+
+.Product__container {
+  min-height: calc(100vh - 119px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 800px) {
+  .Product__container {
+    min-height: calc(100vh - 103px - 59.5px);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+.Product__container img {
+  max-width: 200px;
+}
+.Product__container .Product__info {
+  font-family: "poppins", sans-serif;
+  text-align: center;
+}
+@media screen and (min-width: 800px) {
+  .Product__container .Product__info {
+    display: flex;
+  }
+}
+.Product__container .Product__info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.Product__container .Product__info p {
+  margin-bottom: 2rem;
+}
+.Product__container .Product__info img {
+  max-width: 300px;
+}
+.Product__container .Product__info button {
+  padding: 1rem;
+  width: 120px;
+  text-transform: capitalize;
+  background-color: #f1ea83;
+  cursor: pointer;
+  border: 1px solid black;
+}
+.Product__container .Product__info .product__info__detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.Product__container .Product__info .product__info__detail .quantity {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+.Product__container .Product__info .product__info__detail .quantity label {
+  margin-bottom: 1rem;
+}
+.Product__container .Product__info .product__info__detail .quantity select {
+  text-align: center;
+  max-width: 150px;
+  margin: 0 auto;
+  padding: 0.4rem;
+}
+.Product__container .Product__info .product__info__detail .quantity select option {
+  text-align: center;
+}
+.Product__container .Product__Presentation__Option {
+  font-size: 1.3rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.Product__container .Product__Presentation__Option .first__block {
+  text-align: center;
+}
+.Product__container .Product__Presentation__Option .Second__block {
+  text-align: center;
+}
+
+.load {
+  width: 100px;
+  height: 100px;
+  margin: 110px auto 0;
+  border: solid 10px #1e2196;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  display: inline-block;
+  -webkit-transition: all 0.5s ease-in;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  transition: all 0.5s ease-in;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }/*# sourceMappingURL=main.css.map */
