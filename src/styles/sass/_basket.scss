@@ -1,0 +1,56 @@
+@use './Variables' as *;
+
+.basket__container{
+    min-height: calc(100vh - 94.19px);
+    @media screen and (min-width:800px) {
+        min-height: calc(100vh - 103px - 43px);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .basket__products{
+        padding: 1rem;
+        .basket__product{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            @media  screen and (min-width:800px) {
+                justify-content: space-evenly;
+                
+            }
+            .basket__description{
+                h2{
+                    margin-bottom: 1rem;
+                }
+                text-align: center;
+            }
+            @media screen and (min-width:800px) {
+                flex-direction: row;
+            }
+            .basket__deleteItem{
+                width: 100%;
+                @media screen and (min-width:800px) {
+                    width: 100px;
+                    text-align: center;
+                }
+            }
+            .basket__product__image{
+                max-width: 50%;
+                @media screen and (min-width:800px) {
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+    .Products{
+        width: 100%;
+        text-align: center;
+        font-family: 'poppins',sans-serif;
+        min-height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $BACKGROUND;
+        color: $PRIMARY-TEXT;
+    }
+}

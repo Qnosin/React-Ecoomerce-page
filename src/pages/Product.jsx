@@ -35,7 +35,7 @@ function Product({isOpen,setOpen}) {
 
   const addingToBasket = () =>{
     setBasketNumber((prev) => prev + 1)
-    setBasketItems((prev) => ([...prev,{...productData}]));
+    setBasketItems((prev) => ([...prev,{...productData,quantity:quantity}]));
   }
   return (
     <>
@@ -75,7 +75,6 @@ function Product({isOpen,setOpen}) {
           </div>
           </>}
     </article>
-        
     {isOpen && <HamburgerMenu />}
     </>
   )

@@ -706,4 +706,68 @@ table {
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+.basket__container {
+  min-height: calc(100vh - 94.19px);
+}
+@media screen and (min-width: 800px) {
+  .basket__container {
+    min-height: calc(100vh - 103px - 43px);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+.basket__container .basket__products {
+  padding: 1rem;
+}
+.basket__container .basket__products .basket__product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 800px) {
+  .basket__container .basket__products .basket__product {
+    justify-content: space-evenly;
+  }
+}
+.basket__container .basket__products .basket__product .basket__description {
+  text-align: center;
+}
+.basket__container .basket__products .basket__product .basket__description h2 {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .basket__container .basket__products .basket__product {
+    flex-direction: row;
+  }
+}
+.basket__container .basket__products .basket__product .basket__deleteItem {
+  width: 100%;
+}
+@media screen and (min-width: 800px) {
+  .basket__container .basket__products .basket__product .basket__deleteItem {
+    width: 100px;
+    text-align: center;
+  }
+}
+.basket__container .basket__products .basket__product .basket__product__image {
+  max-width: 50%;
+}
+@media screen and (min-width: 800px) {
+  .basket__container .basket__products .basket__product .basket__product__image {
+    max-width: 300px;
+  }
+}
+.basket__container .Products {
+  width: 100%;
+  text-align: center;
+  font-family: "poppins", sans-serif;
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1ea83;
+  color: #1e2196;
 }/*# sourceMappingURL=main.css.map */
