@@ -1,4 +1,3 @@
-import React from 'react'
 import MasterCardImg  from '../image/Mastercard-logo.svg.png';
 import VisaLogo from '../image/Visa_Inc._logo.svg.png';
 import PaypalLogo from '../image/paypal-logo-png-transparent.png';

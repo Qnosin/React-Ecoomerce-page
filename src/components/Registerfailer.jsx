@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Registerfailer() {
   return (
     <div className='registraion__fail__info'>

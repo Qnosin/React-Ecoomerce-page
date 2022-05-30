@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import GoogleButton from '../image/btn_google_signin_light_normal_web@2x.png';
 import {LoginContext} from '../Contexts/LoginContext';
-import {UserContext} from '../Contexts/UserContext';
 import {useContext} from 'react';
 import {auth , provider} from '../firebase-config';
 import { signInWithPopup, signInWithEmailAndPassword} from 'firebase/auth';
 function LoginSection() {
+  //Context State
     const {loginEmail} = useContext(LoginContext);
     const {setLoginEmail} = useContext(LoginContext);
     const {loginPassword} = useContext(LoginContext);
     const {setLoginPassword} = useContext(LoginContext);
     //set user information
-    const { setUser } = useContext(UserContext);
     const [isLoggin,setIsLoggin] = useState(false);
     const [error,setError] = useState('');
 
+    //Functions
    const signIn = () =>{
      signInWithEmailAndPassword(auth,loginEmail,loginPassword).then((result)=>{
        localStorage.setItem('name',result.user.email);

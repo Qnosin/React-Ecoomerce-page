@@ -1,5 +1,3 @@
-import React from 'react'
-import {Suspense} from 'react';
 import {AiFillPhone} from 'react-icons/ai';
 import {IoIosPin} from 'react-icons/io';
 import {FaFax} from 'react-icons/fa';

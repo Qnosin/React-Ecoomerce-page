@@ -1,5 +1,3 @@
-import React from 'react'
-
 function RegisterSuccesfull() {
   return (
     <div className='registration__succes__info'>

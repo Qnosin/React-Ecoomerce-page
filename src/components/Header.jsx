@@ -1,31 +1,26 @@
-import React from 'react'
 import {FiFacebook} from 'react-icons/fi';
 import {AiOutlineInstagram , AiOutlineLinkedin , AiOutlineYoutube} from 'react-icons/ai'
 import {RiPinterestLine} from 'react-icons/ri';
-import { UserContext } from '../Contexts/UserContext';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {BsBasket} from 'react-icons/bs';
 import Logo from '../image/shoes-store-logo.png';
 import {useContext} from 'react';
 import {basketContext} from '../Contexts/shopContext';
-import {signOut , onAuthStateChanged} from 'firebase/auth';
+import {signOut} from 'firebase/auth';
 import {auth} from '../firebase-config';
 import {useNavigate} from 'react-router-dom';
 
-function Header({setSendRequest}) {
+function Header() {
   const {basketNumber} = useContext(basketContext);
-  const {user} = useContext(UserContext);
-  const {setUser} = useContext(UserContext);
   let navigate = useNavigate();
-  onAuthStateChanged(auth,(currentUser) =>{
-      setUser(currentUser)
-  })
+  
 
   const LogOut = async () =>{
       await signOut(auth);
       localStorage.removeItem('name');
       localStorage.removeItem('image');
       localStorage.removeItem('id');
+      navigate('/')
   }
   return (
     <header className='header'>
@@ -46,12 +41,10 @@ function Header({setSendRequest}) {
                 <RiPinterestLine />
             </article>
         </article>
-        {/* Without hamburger make this apper */}
-        {/* Create article with navbar, on mobile everything is on hamburger menu */}
         <article className='header__lower__info'>
             <nav>
               <div className='header__logo'>
-               <Link to={'/'}><img src={Logo}></img></Link> 
+               <Link to={'/'}><img alt='logo of brand' src={Logo}></img></Link> 
               </div>
             <div className='header__lower__input'>
               <input placeholder='Search' type="text" />

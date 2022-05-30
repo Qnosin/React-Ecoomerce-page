@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
-import {getAuth, GoogleAuthProvider , signInWithPopup} from 'firebase/auth';
+import {getAuth, GoogleAuthProvider} from 'firebase/auth';
 const firebaseConfig = {
   apiKey: "AIzaSyA1shM0qGPRiVfFvqu4S8QWXowltmv27V4",
   authDomain: "shopapp-dfb12.firebaseapp.com",

@@ -9,6 +9,7 @@
     }
     .basket__products{
         padding: 1rem;
+        font-family: 'poppins',sans-serif;
         .basket__product{
             display: flex;
             flex-direction: column;
@@ -19,16 +20,28 @@
                 
             }
             .basket__description{
+                text-align: center;
+                font-size: 1.2rem;
                 h2{
                     margin-bottom: 1rem;
                 }
-                text-align: center;
+                h3{
+                    margin-top: 1rem;
+                }
             }
             @media screen and (min-width:800px) {
                 flex-direction: row;
             }
             .basket__deleteItem{
                 width: 100%;
+                p{
+                    padding: .5rem;
+                    border-radius: 10px;
+                    background-color: red;
+                    width: 10px;
+                    color: $SECONDARY-TEXT;
+                    cursor: pointer;
+                }
                 @media screen and (min-width:800px) {
                     width: 100px;
                     text-align: center;

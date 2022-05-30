@@ -1,4 +1,3 @@
-import React from 'react'
 import {BsBasket} from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import {signOut} from 'firebase/auth';
@@ -20,7 +19,7 @@ function HamburgerMenu() {
       {localStorage.getItem('name') === null ? <Link to={'/login'}>Login</Link> : <Link to={`/profile/${localStorage.getItem('name')}`}>{localStorage.getItem('name')}</Link> }
       {localStorage.getItem('name') === null ? <Link to={'/Register'}>Register</Link> : <div onClick={LogOut} className='SignOutButton'>Log Out</div> }
       <Link to={'/'}>Home</Link>
-      <Link to='/basket/:id'><BsBasket /></Link>
+      <Link to='/basket'><BsBasket /></Link>
       </nav>
     </article>
   )

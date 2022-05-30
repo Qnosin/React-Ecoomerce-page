@@ -1,13 +1,10 @@
-import React, { useContext , useState } from 'react'
-import HamburgerMenu from '../components/HamburgerMenu'
-import Hamburger from 'hamburger-react'
-import Header from '../components/Header'
+import { useContext , useState } from 'react'
 import {RegisterContext} from '../Contexts/RegisterContext';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import {auth} from '../firebase-config'; 
 import RegisterSuccesfull from '../components/RegisterSuccesfull';
 import Registerfailer from '../components/Registerfailer';
-function Register({isOpen,setOpen}) {
+function Register() {
   //Context State
   const {setRegisterEmail} = useContext(RegisterContext);
   const {setRegisterPassword} = useContext(RegisterContext);
@@ -30,8 +27,6 @@ function Register({isOpen,setOpen}) {
 
   return (
     <>
-    <Hamburger toggled={isOpen} toggle={setOpen} />
-    <Header></Header>
     <article className='register__block'>
       <div className='register'>
         <input onChange={(e) => setRegisterEmail(e.target.value)} type='text' placeholder='email'></input>
@@ -41,7 +36,6 @@ function Register({isOpen,setOpen}) {
         {isProblem && <Registerfailer/>}
       </div>
     </article>
-   {  isOpen && <HamburgerMenu />}
    </>
   )
 }

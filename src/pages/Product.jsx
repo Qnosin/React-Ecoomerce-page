@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
+import { useState, useEffect , useContext } from 'react'
 import {useParams} from 'react-router-dom';
-import { useEffect } from 'react';
 import {getDoc,doc} from 'firebase/firestore';
 import {db} from '../firebase-config';
-import Header from '../components/Header';
-import HamburgerMenu from '../components/HamburgerMenu';
-import Hamburger from 'hamburger-react';
 import {AiFillStar} from 'react-icons/ai';
-import {useContext} from 'react';
 import {basketContext} from '../Contexts/shopContext';
-function Product({isOpen,setOpen}) {
+import uuid from 'react-uuid'
+
+function Product() {
+  //context State
     const {setBasketNumber} = useContext(basketContext);
     const {setBasketItems} = useContext(basketContext);
     const {setQuantity} = useContext(basketContext);
     const {quantity} = useContext(basketContext);
+    //State from url
     const {id} = useParams();
+    //Firebase Ref
     const productRef = doc(db,'products',id)
+    //LocalStates
     const [productData,setProductData] = useState({});
     const [isLoading,setIsLoading] = useState(true);
     useEffect(()=>{
@@ -27,20 +28,19 @@ function Product({isOpen,setOpen}) {
         },1000)
       }
       getProduct();
-  },[])
+  },[productRef])
+
+  //Functions
   const quantitySelect = (e) =>{
-    //Quantity
     setQuantity(e.target.value);
   }
 
   const addingToBasket = () =>{
     setBasketNumber((prev) => prev + 1)
-    setBasketItems((prev) => ([...prev,{...productData,quantity:quantity}]));
+    setBasketItems((prev) => ([...prev,{...productData,quantity:quantity,itemId:uuid()}]));
   }
   return (
     <>
-    <Hamburger toggled={isOpen} toggle={setOpen} />
-    <Header></Header>
     <article className='Product__container'>
         {isLoading === true ? 
         <div className="load"></div> 
@@ -75,7 +75,6 @@ function Product({isOpen,setOpen}) {
           </div>
           </>}
     </article>
-    {isOpen && <HamburgerMenu />}
     </>
   )
 }

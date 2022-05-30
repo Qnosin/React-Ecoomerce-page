@@ -11,6 +11,9 @@ import {UserContext} from './Contexts/UserContext';
 import {LoginContext} from './Contexts/LoginContext';
 import Profile from './pages/Profile.jsx';
 import Product from './pages/Product';
+import HamburgerMenu from './components/HamburgerMenu';
+import Header from './components/Header';
+import Hamburger from 'hamburger-react';
 
 function App() {
   const [isOpen, setOpen] = useState(false)
@@ -33,21 +36,24 @@ function App() {
     <div className="App">
       <Router>
       <basketContext.Provider value={{basketNumber,setBasketNumber,basketItems,setBasketItems,quantity,setQuantity}}>
-        <RegisterContext.Provider value={{registerEmail,setRegisterEmail,registerPassword,setRegisterPassword}}>
-          <LoginContext.Provider value={{loginEmail,setLoginEmail,loginPassword,setLoginPassword}}>
-            <UserContext.Provider value={{user,setUser}}>
+      <RegisterContext.Provider value={{registerEmail,setRegisterEmail,registerPassword,setRegisterPassword}}>
+      <LoginContext.Provider value={{loginEmail,setLoginEmail,loginPassword,setLoginPassword}}>
+      <UserContext.Provider value={{user,setUser}}>
+      <Hamburger toggled={isOpen} toggle={setOpen} ></Hamburger>
+      <Header></Header>
         <Routes>
-          <Route path='/' element={<Homepage isOpen={isOpen} setOpen={setOpen}></Homepage>}/>
-          <Route path='/login' element={<Login isOpen={isOpen} setOpen={setOpen} ></Login>}/>
-          <Route path='/register' element={<Register isOpen={isOpen} setOpen={setOpen}></Register>}/>
-          <Route path='/basket' element={<Basket isOpen={isOpen} setOpen={setOpen}/>}/>
-          <Route path='/Product/:id' element={<Product isOpen={isOpen} setOpen={setOpen}/>}/>
-          <Route path='/profile/:name' element={<Profile isOpen={isOpen} setOpen={setOpen} />}></Route>  
+          <Route path='/' element={<Homepage />}/>
+          <Route path='/login' element={<Login />}/>
+          <Route path='/register' element={<Register />}/>
+          <Route path='/basket' element={<Basket/>}/>
+          <Route path='/Product/:id' element={<Product/>}/>
+          <Route path='/profile/:name' element={<Profile/>}/>
         </Routes>
+        {isOpen && <HamburgerMenu />}  
         </UserContext.Provider>
         </LoginContext.Provider>
         </RegisterContext.Provider>
-        </basketContext.Provider>  
+        </basketContext.Provider>
       </Router>
     </div>
   );
