@@ -66,7 +66,7 @@ function Product() {
       <div className='Product__Presentation__Option'>
         <div className='first__block'>
           <p>Price</p>
-          <p>{productData.price}</p>
+          <p>{productData.price}$</p>
         </div>
         <div className='Second__block'>
           <p>Reviews</p>

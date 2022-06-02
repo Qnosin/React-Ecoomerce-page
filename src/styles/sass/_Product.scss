@@ -62,10 +62,15 @@
         }
     }
     .Product__Presentation__Option{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
         font-size: 1.3rem;
         display: flex;
         width: 100%;
         justify-content: space-evenly;
+        @media screen and (min-width:800px) {
+            margin-top: 1rem;
+        }
         .first__block{
             text-align: center;
         }

@@ -12,7 +12,7 @@ function LoginSection() {
     const {setLoginPassword} = useContext(LoginContext);
     //set user information
     const [isLoggin,setIsLoggin] = useState(false);
-    const [error,setError] = useState('');
+    const [error,setError] = useState(false);
 
     //Functions
    const signIn = () =>{
@@ -22,7 +22,7 @@ function LoginSection() {
        localStorage.setItem('image',result.user.photoURL);
        setIsLoggin(true);
      }).catch(()=>{
-      setError('Login Failed! Please Try Again Later')
+      setError(true)
      })
    }
 
@@ -44,7 +44,7 @@ function LoginSection() {
             <input onChange={(e) => setLoginEmail(e.target.value) } placeholder='email' type='text'></input>
             <input onChange={(e) => setLoginPassword(e.target.value)} placeholder='password' type="password" />
             {isLoggin && <div className='LoginSuccesfull'>Loggin Succesfull</div>}
-            {error}
+            {error === false ? <p>For demo use: admin@gmail.com | admin123</p> : <p className='LoginError'>Login Failed! Please Try Again Later</p> }
         </div>
         <div className='Login__with__Google'>
             <button onClick={signIn} className='Email__Button'>Login</button>

@@ -24,6 +24,9 @@
             flex-direction: column;
             justify-content: space-evenly;
             min-height: 16vh;
+            .LoginError{
+                color: red;
+            }
             .LoginSuccesfull{
                 text-align: center;
                 color: rgb(8, 248, 8);
