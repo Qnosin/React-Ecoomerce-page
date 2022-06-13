@@ -9,6 +9,7 @@ import {basketContext} from '../Contexts/shopContext';
 import {signOut} from 'firebase/auth';
 import {auth} from '../firebase-config';
 import {useNavigate} from 'react-router-dom';
+import {motion} from 'framer-motion';
 
 function Header() {
   const {basketNumber} = useContext(basketContext);
@@ -44,7 +45,7 @@ function Header() {
         <article className='header__lower__info'>
             <nav>
               <div className='header__logo'>
-               <Link to={'/'}><img alt='logo of brand' src={Logo}></img></Link> 
+               <Link to={'/'}><motion.img animate={{scale:1,opacity:1}} initial={{scale:0,opacity:0}} transition={{type:'spring'}} alt='logo of brand' src={Logo}></motion.img></Link> 
               </div>
             <div className='header__lower__input'>
               <input placeholder='Search' type="text" />

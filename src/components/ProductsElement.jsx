@@ -3,6 +3,7 @@ import {collection,getDocs} from 'firebase/firestore';
 import {useState , useEffect } from 'react';
 import {AiFillStar} from 'react-icons/ai';
 import {useNavigate} from 'react-router-dom';
+import {motion} from 'framer-motion';
 function ProductsElement() {
     //Use Navigate
     let navigate = useNavigate();
@@ -35,12 +36,12 @@ function ProductsElement() {
          :
          products.map((product) => {
             return(
-              <article onClick={(e) =>handleItem(product.id)} key={product.id} className="product">
+              <motion.article animate={{scale:1,opacity:1}} initial={{scale:0,opacity:0}} transition={{type:'spring'}} onClick={(e) =>handleItem(product.id)} key={product.id} className="product">
                   <img alt='product representation' src={product.image}></img>
                   <h2 className='product__name'>{product.name}</h2>
                   <p className='product__review'><AiFillStar />{product.reviews} reviews</p>
                   <p className='product__price'>${product.price}</p>
-              </article> 
+              </motion.article> 
             )
         })} 
           

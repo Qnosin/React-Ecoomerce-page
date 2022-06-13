@@ -2,7 +2,7 @@ import {useParams} from 'react-router-dom';
 import anonPicture from '../image/no-picture.jpg';
 function Profile() {
     //url state
-    const {name} = useParams();
+      const {name} = useParams();
      if(localStorage.getItem('image') === 'null'){
        localStorage.setItem('image', anonPicture)
      }
